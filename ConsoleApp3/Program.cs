@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp3
@@ -10,8 +11,7 @@ namespace ConsoleApp3
             using (var context = new MyContext())
             {
                 context.Database.EnsureCreated();
-
-                var entities = context.Set<MyEntity>().ToListAsync().Result;
+                var entities = context.Set<MyEntity>().ToList();
             }
         }
     }
